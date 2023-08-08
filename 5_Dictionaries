@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 26 19:27:47 2023
+
+@author: nathan
+"""
+
+'''
+A dictionary is like a list. In fact, it's almost
+the "same" as a list, except for one tiny detail:
+the index value of a dictionary can be ANYTHING.
+
+"Under the hood" a dictionary is actually a hash
+table data structure, and it is very powerful!
+
+A data structure is an "object" that contains data
+inside of it in a specific way that makes accessing
+that data somehow faster or better or uses less space.
+You know about arrays already, which are one kind of 
+data structure.
+
+The index of a dictionary is called a "key"
+The element at that key is commonly called a "value"
+'''
+
+# Let's get dict()
+l33t2eng = dict()
+l33t2eng = {}
+print(l33t2eng)
+
+l33t2eng['fox'] = 'good lookin\' person'
+print(l33t2eng)
+
+# Explicit declaration of a dictionary
+l33t2eng = {'scroogin':'break up to save money', 
+            'n00b': 'new player',
+            'suxxors': 'you suck',
+            'git gud': 'get good',
+            'rigged': 'i didn\'t win'}
+print(l33t2eng)
+
+# Many things work for dictionaries. You can find
+# details using the help menu or the internet.
+print(len(l33t2eng))
+
+# Boolean expressions
+# tell you if something is there as a KEY in the dictionary
+print('n00b' in l33t2eng)
+print('get good' in l33t2eng)
+print(l33t2eng['n00b'])
+
+# Unlike a list. . . 
+# for x in list
+# makes x equal to elements (or values) of a list 
+# similar code for dictionaries makes x the KEY
+# In other words, dictionaries have to be indexed like arrays
+# in C++
+for key in l33t2eng:
+    print(key, l33t2eng[key])
+
+# Exercise 
+# Find out how many of each letter there are in the following string
+words = "supercalifragilisticexpallidocious paraskivadecatriaphobia"
+# a -- 4
+# b -- 3
+# ...
+# z -- 0

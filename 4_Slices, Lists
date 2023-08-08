@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 26 13:05:05 2023
+
+@author: nathan
+"""
+
+import sys
+
+# Slices are an excellent way to break up a string into parts.
+# They work intuitively once you know the syntax.
+s = 'syntaxes is for losers, bro'
+print(s[0:6])
+print(s[6:27])
+print(s[6:len(s)])
+print(s[6:]) # defaults to the end of the string
+print(s[:6]) # default to the beginning of the string
+print(s[:])
+
+# The following two lines are identical
+print(s[-1])
+print(s[-1:])
+# The following two lines are NOT the same
+# The reason for this is that slices print every element in the range
+print(s[-2])
+print(s[-2:])
+
+# More slicing, like Fruit Ninja but worse in every way
+print(s[::-1]) # Produces the slice using the iterator of -1 (i.e. backwards)
+print(s[::-2])
+print(s[10:3:-3])
+
+
+### LISTS PART 1
+
+
+c = [10, 20, 30, 40]
+d = ['taco', 'burrito', 'cat', 'frog']
+print(c)
+print(d)
+
+listception = [c, d, d]
+print(listception)
+
+listlistception = [listception, listception]
+print(listlistception)
+listlistlistception = [listlistception]
+print(listlistlistception)
+
+# Lists do not have to have the same type of thing in each position
+wtf = ['spam', [2], 7.5, listception]
+print(wtf)
+print(type(wtf))
+
+emptylist = []
+print(emptylist)
+
+print()
+print(c[0])
+
+# Unlike strings, lists are mutable. So you can change any part of them
+# that you want.
+c[1] = "orange"
+print(c)
+
+# If you try to access a list element that is off the edge, it will error out.
+# print(c[4])
+
+# Boolean operations on lists (boolean operators are either true or false)
+print(5 in wtf)
+print(2 in wtf)
+print([2] in wtf)
+print([c, d, d] in wtf)
+
+print()
+# How to print the contents of a list
+for x in c:
+    print(x)
+    
+print()
+for x in range(len(d)):
+    print(d[x])
+    
+# range is a function that actually creates a *list*, not a set like I said
+# earlier. In other words, "x in range(5)" is really a boolean operation
+# on the list [0, 1, 2, 3, 4]
+
+# This loop executes 0 times!
+for x in []:
+    print("Hi")
+    
+print('-'*10)
+
+# List concatenation (IMPORTANT!)
+biglist = [1, 2] + [3, 'random']
+print(biglist)
+print([1, 2, 3] * 4)
+
+# What about slices?
+print(c[:])
+print(c[::-1])
+
+# Le Le Shaniqua
+name = "Shaniqua"
+print("le" + " le " + name)
+
+
+### LISTS PART 2
+
+
+# List methods
+t = ['e', 'd', 'c', 'b', 'a']
+print(t)
+t.append('f')
+print(t)
+
+# Using append with an empty list allows you to build a list
+
+t2 = ['h', 'g']
+t.extend(t2)
+print(t)
+
+# This is how you sort a list
+t.sort()
+print(t)
+
+# the pop method removes an item from list t at a specified index value 
+# and returns it
+# By default, pop removes the last element of the list
+popped = t.pop(1)
+print(popped, t)
+t.pop()
+print(t)
+
+# Another way to "pop" an element of a list without a return value
+# This method is not very "pythonny"
+# One advantage is that it lets you pop "slices" of lists, which is why
+# you might see it being used
+del t[1:3]
+print(t)
+
+# Remove allows you to get rid of an element by its name
+# It removes only one copy of the element requested
+# Can only remove elements in the list
+print()
+t = ['e', 'd', 'c', 'b', 'a', 'g', 'h', 'j', 'e']
+print(t)
+t.sort()
+t.remove('e')
+print(t)
+if ('w' in t):
+    t.remove('w')
+
+# Specific methods for numeric lists only
+numlist = [-45, 1, 2, 3, 4, 5, 9001, 54]
+print(numlist)
+print(max(numlist))
+print(min(numlist))
+print(sum(numlist))
+
+# Two ways to create an empty list
+empty = []
+empty = list()
+

@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 26 19:26:00 2023
+
+@author: nathan
+"""
+
+
+
+# This program teaches basics about strings
+
+# Single or double quotes are the same.
+fruit = 'bananas'
+letter = fruit[1]
+print(fruit, type(fruit))
+print(letter, type(letter))
+
+# functions on data types (like str) are called methods
+# A method is a fancy name for a function for a built-in data type in Python
+# One powerful method for a str is len
+# len tells you the length of the strings
+length = len(fruit)
+print(length)
+
+# Print the last letter of fruit
+print(fruit[len(fruit)-1])
+# Python way to do the same thing. . . .
+print(fruit[-1])
+
+# Print the last two letters of fruit
+print(fruit[-2]+fruit[-1])
+
+# Print that last letter seven times (F's in the chat for Roy)
+print(fruit[-1]*7)
+
+# C++ style
+print()
+index = 0
+while index < len(fruit):
+    print(fruit[index])
+    index = index + 1
+    
+# Python way
+print()
+for i in fruit:
+    print(i)
+    
+# Print the fruit in reversed form
+print()
+for i in reversed(fruit):
+    print(i)
+    
+# Foreshadowing for next class!!!!
+# Slices FTW!
+print(fruit[::-1])
+
+
+import sys
+
+# Explicitly defined strings in Python are immutable
+# Immutable means that they cannot be changed!
+greetings = 'Welcome to Monday!'
+# greetings[0] = 'H'
+
+# Strings are a very powerful data type, and there are
+# a lot of functions written for it already. How do you
+# know what is already available for you to use?
+# print(dir(greetings))
+# print(type(greetings))
+# print(help(str.capitalize))
+# Exercise
+# The user will type in a string and a letter.
+# You have to write a program that finds out if the letter is in the string.
+phrase = input("Tell me a phrase, bro. ")
+letter = input("Letter me. ")
+
+# Does the letter appear in the phrase?
+for x in range(len(phrase)):
+    if letter == phrase[x]:
+        print("I got you, bro.")
+        
+# C++ style (with explicit index values)
+# How many times does letter appear in the phrase?
+print()
+count = 0
+for x in range(len(phrase)):
+    if letter == phrase[x]:
+        count = count + 1
+print(count)
+        
+# Python method
+print()
+count = 0
+for x in phrase:
+    if letter == x:
+        count += 1
+print(count)

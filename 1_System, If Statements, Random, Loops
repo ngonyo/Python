@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 26 13:00:58 2023
+
+@author: nathan
+"""
+
+import sys
+
+# This is a comment.
+"""
+This is comment line 1.
+This is comment line 2.
+"""
+
+# The default type of any input is a string or 'str'
+n = int(input())
+"""
+These lines makes it more clear what you are doing.
+n = input()
+n = int(n)
+"""
+
+if (n > 4):
+    print("Hello")
+    print("Your number is larger than 4.")
+else:
+    print("Your number is less than or equal to 4.")
+    
+# Command line parameters
+# A command line parameter is the stuff you put after
+# your python script name that is built-in input to your
+# program.
+
+print(sys.argv[0])
+if (len(sys.argv) >= 2):
+    print("I want to eat", sys.argv[1])
+else:
+    print("You are clearly not hungry.")
+    
+# Complex if statements and boolean expressions
+
+x = int(input("What is your favorite number? "))
+if x < 5:
+    print("You dream too small.\nGo away.")
+elif x == 7:
+    print("Lucky numba 7.")
+elif x < 29:
+    print("Still dating age.")
+elif x >= 40 and x < 59:
+# C++ used && or ||. This is SO MUCH BETTER.
+    print("Third time's the charm.")
+elif x != 69:
+    print("You missed the best number.")
+else:
+    print("Just die already.")
+    
+    
+# Import is like the "include" line in C++
+# These lines add a package that our program can use
+import sys
+import random
+
+# The dot notation represents many things.
+# In this case, it says "use this function from package random"
+# random.random() returns a number uniformly from [0, 1)
+x = random.random()
+print(x, type(x))
+print()
+
+# Loops work the same way as C++
+n = 1
+while n <= 10:
+    print(random.random())
+    n = n + 1
+
+# The range(10) command creates a sequence of integers from [10, 9)
+# random.randint(x, y) generates a random integer from [x, y]
+print()
+for i in range(10):
+    x = random.randint(100, 120)
+    print(i, x)
+
+print()    
+t = ['taco', 'burrito', 'salad', 'vodka']
+for i in t:
+    print(i)
+    
+print()
+x = 10
+while x > 0:
+    print(x)
+    x = x - 1
+print("Crappy New Year!")
+
+print()
+for x in range(10):
+    print(10-x)
+print("Crappy New Year!")
+
+# range(x, y) generates the sequence [x, y)
+print()
+for x in range(2, 15):
+    print(x)
+    
+# range(x, y, z) generates the sequence [x, y) in steps of z
+print()
+for x in range(2, 16, 3):
+    print(x)
+    
+print()
+for x in range(10, 0, -1):
+    print(x)
+print("Crappy New Year!")
